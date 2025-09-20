@@ -1,0 +1,11 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% block content %}
+<h1>1ta YANGILIK</h1>
+<div style='text-align: center'>
+    <h2 style="line-height: 50px">{{ new.title }}</h2><hr>
+    {{ new.body }}<hr>
+    {{ new.created_at }}<hr>
+    <img style="margin-bottom: 60px"src="{{ new.image.url }}" alt="good job" width="550px">
+</div>
+{% endblock content %}
