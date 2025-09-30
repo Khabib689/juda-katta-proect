@@ -1,0 +1,46 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 style="color: rgb(255, 0, 212);">{{ category.name }}</h1>
+<hr>
+
+<style>
+.news-list {
+  margin-top: 20px;
+}
+
+.news-item {
+  margin-bottom: 18px;   
+  line-height: 1.6em;    
+}
+
+.news-item a {
+  font-size: 17px;
+  display: inline-block;
+  padding: 6px 10px;
+  text-decoration: none;
+  color: #111;
+  border-radius: 4px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.news-item a:hover {
+  background: #f0f0f0;
+  color: #d100c7; 
+}
+
+.news-item a:active {
+  background: #ddd;
+  transform: scale(0.97);
+}
+</style>
+
+<div class="news-list">
+  {% for category_new in category_news %}
+    <h4 class="news-item">
+      <a href="{% url 'news_detail' category_new.id %}">{{ category_new.title }}</a>
+    </h4>
+  {% endfor %}
+</div>
+{% endblock content %}

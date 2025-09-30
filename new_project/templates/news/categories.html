@@ -1,0 +1,9 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block content %}
+    {% for category in categories %}
+        <h2>{{ category.name }}</h2>
+</br>
+    {% endfor %}
+{% endblock content %}

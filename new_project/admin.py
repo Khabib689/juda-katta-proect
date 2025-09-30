@@ -5,7 +5,7 @@ from .models import Category,New, Contacts
 # admin.site.register(New)
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['name']
+    list_display = ['name', 'id']
 @admin.register(New)
 class NewAdmin(admin.ModelAdmin):
     list_display = ["title","slug","created_at","status"]
@@ -14,8 +14,6 @@ class NewAdmin(admin.ModelAdmin):
     search_fields = ["title","slug"]
 
 
-
-admin.site.register(Contacts)
 
 
 
